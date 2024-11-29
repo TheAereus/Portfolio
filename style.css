@@ -1,14 +1,22 @@
+body{
+    background-color: #0a0061;
+}
+
 #top-bar{
     background-color: red;
     text-align: center;
     padding: 10px;
 }
 
-#top-bar a:hover{
-    background-color: blue;
+#texte-entete{
+    text-align: center;
 }
 
-.paralax{
-    text-align: center;
+.bouton{
+    background-color: #001e8d;
+    color: white;
+}
 
+.bouton:hover{
+    background-color: #002bcb;
 }
