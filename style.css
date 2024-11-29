@@ -1,0 +1,14 @@
+#top-bar{
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+}
+
+#top-bar a:hover{
+    background-color: blue;
+}
+
+.paralax{
+    text-align: center;
+
+}
