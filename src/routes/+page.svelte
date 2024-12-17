@@ -54,6 +54,9 @@
 </script>
 
 <style>
+    :global(body) {
+        background: linear-gradient(152deg, rgba(32,1,54,1) 0%, rgba(0,30,147,1) 50%, rgba(38,0,255,1) 100%);
+    }
 
     .parallax {
         position: relative;
@@ -118,13 +121,27 @@
         }
     }
 
+    .photoEtNom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 50px;
+    }
+
+
+    .photoEtNom img {
+        position: relative;
+        top: -10vh;
+        width: 10vw;
+        height: 10vw;
+    }
+
     .projets {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         overflow: hidden;
-        background: linear-gradient(152deg, rgba(32,1,54,1) 0%, rgba(0,30,147,1) 50%, rgba(38,0,255,1) 100%);
         margin: 0;
     }
 
@@ -158,6 +175,11 @@
     </div>
     <div class="layer" data-speed="0.666666"></div>
     <div class="layer" data-speed="0.333333"></div>
+</div>
+
+<div class="photoEtNom">
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Fde%2F04%2F5e%2Fde045eb28164c2f91e6378a817f2f32f.jpg&f=1&nofb=1&ipt=f4cc1db886b0fd4ea271fea0fe0281944aabc515e53564595387b2816421a322&ipo=images" alt="Camille Okubo">
+    Camille Okubo
 </div>
 
 <div class="projets">
