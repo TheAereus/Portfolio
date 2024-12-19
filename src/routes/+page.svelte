@@ -54,13 +54,16 @@
 </script>
 
 <style>
+
     :global(body) {
         background: linear-gradient(152deg, rgba(32,1,54,1) 0%, rgba(0,30,147,1) 50%, rgba(38,0,255,1) 100%);
+        font-family: 'Open Sans', sans-serif;
     }
 
     .parallax {
+        background: radial-gradient(circle at 70% 100%, rgba(29,49,195,1) 13%, rgba(0,12,112,1) 74%);
         position: relative;
-        height: 60vh;
+        height: 50vh;
         overflow: hidden;
         perspective: 1000px;
     }
@@ -72,22 +75,10 @@
         will-change: transform;
     }
 
-    .layer:nth-child(1) {
-        background: linear-gradient(121deg, rgba(4,0,18,1) 0%, rgba(0,17,85,1) 50%, rgba(36,0,57,1) 100%); ;
-        z-index: 1;
-        top: 0;
-    }
-
     .layer:nth-child(2) {
         background: #7f7fff;
         z-index: 2;
-        top: 20vh;
-    }
-
-    .layer:nth-child(3) {
-        background: #7fff7f;
-        z-index: 3;
-        top: 40vh;
+        top: 30vh;
     }
 
     .dots {
@@ -123,31 +114,40 @@
 
     .photoEtNom{
         display: flex;
+        margin-top: -15vh;
         flex-direction: column;
         align-items: center;
         font-size: 50px;
     }
 
-
     .photoEtNom img {
         position: relative;
-        top: -10vh;
-        width: 10vw;
-        height: 10vw;
+        width: 20vw;
+        height: 20vw;
+        border-radius: 50%;
+    }
+
+    .photoEtNom p {
+        position: relative;
+    }
+
+    .photoEtNom p:nth-child(3) {
+        margin-top: -5vh;
+        font-size: 25px;
+        text-align: center;
     }
 
     .projets {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
         overflow: hidden;
         margin: 0;
     }
 
     .card {
-        width: 300px;
-        height: 400px;
+        min-width: 300px;
+        min-height: 400px;
         background: white;
         border-radius: 15px;
         transition: transform 0.1s ease-out;
@@ -160,31 +160,43 @@
         color: #333;
         margin: 10px;
     }
+
+    .titre {
+        position: relative;
+        text-align: center;
+    }
+
+    @media (max-width: 1000px) {
+        .photoEtNom img {
+            position: relative;
+            top: -15vh;
+            width: 50vw;
+            height: 50vw;
+            border-radius: 50%;
+        }
+    }
 </style>
 
 <div class="parallax">
-    <div class="layer" data-speed="0.999999">
-        <div class="dots">
-            {#each dots as dot (dot.x)}
-                <div
-                        class="dot"
-                        style="top: {dot.y}%; left: {dot.x}%; width: {dot.size}px; height: {dot.size}px;"
-                ></div>
-            {/each}
-        </div>
+    <div class="dots">
+        {#each dots as dot (dot.x)}
+            <div class="dot" style="top: {dot.y}%; left: {dot.x}%; width: {dot.size}px; height: {dot.size}px;"></div>
+        {/each}
     </div>
-    <div class="layer" data-speed="0.666666"></div>
-    <div class="layer" data-speed="0.333333"></div>
+    <div class="layer" data-speed="0.3"></div>
 </div>
 
 <div class="photoEtNom">
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2Fde%2F04%2F5e%2Fde045eb28164c2f91e6378a817f2f32f.jpg&f=1&nofb=1&ipt=f4cc1db886b0fd4ea271fea0fe0281944aabc515e53564595387b2816421a322&ipo=images" alt="Camille Okubo">
-    Camille Okubo
+    <img src="/images/Portfolio_photo.jpg" alt="Camille Okubo">
+    <p>Camille Okubo</p>
+    <p>Étudiant en BUT Informatique parcours réalisation d'applications</p>
 </div>
+
+<h1 class="titre">Projets</h1>
 
 <div class="projets">
     <div class="card" on:mousemove={(event) => handleMouseMove(event, event.currentTarget)} on:mouseleave={(event) => resetCard(event.currentTarget)} role="presentation">
-        <img src="//tokyocards.com/cdn/shop/files/image_b13157a3-a0cc-4323-9e28-af4ccec4de81.webp?v=1720805478&width=1946">
+        Projet
     </div>
     <div class="card" on:mousemove={(event) => handleMouseMove(event, event.currentTarget)} on:mouseleave={(event) => resetCard(event.currentTarget)} role="presentation">
         Projet
