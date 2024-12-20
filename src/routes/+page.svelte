@@ -372,6 +372,40 @@
         margin-left: 26px;
     }
 
+    .contact {
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact form {
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        width: 70vw;
+    }
+
+    .contact input {
+        border: none;
+        outline: none;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .message {
+        border: none;
+        outline: none;
+        margin: 10px;
+        padding: 10px;
+        width: 100%;
+        height: 30vh;
+        resize: none;
+    }
+
+    #submit {
+        position: relative;
+        margin-left: 100%;
+    }
+
     @media (max-width: 1000px) {
         .photoEtNom img {
             position: relative;
@@ -515,8 +549,11 @@
 
 <div class="contact">
     <form>
-        <input type="text" value="email">
-        <input type="text" value="nom">
-        <input type="text" value="Rédigez votre message">
+        <div>
+            <input type="text" placeholder="email">
+            <input type="text" placeholder="nom">
+        </div>
+        <textarea class="message" placeholder="Rédigez votre message"></textarea>
+        <input id="submit" type="submit" value="Envoyer">
     </form>
 </div>
